@@ -1,0 +1,12 @@
+node { // <1>
+    stage('Build') { // <2>
+        echo "build"
+        checkout scm
+    }
+    stage('Test') {
+        echo "test"
+    }
+    stage('Deploy') {
+        echo "deploy"
+    }
+}
