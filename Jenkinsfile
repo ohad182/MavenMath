@@ -1,5 +1,5 @@
 pipeline {
-    agent label:'pt-lt0582'
+    agent label:'pt-lt0104'
     stages {
         stage ('Delete old file')
         {
