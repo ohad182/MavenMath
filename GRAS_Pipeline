@@ -15,7 +15,9 @@ pipeline {
 
         stage ('Kill Old GRAS')
         {
+	steps{
             bat 'taskkill /f /im GRAS.exe'
+	    }
         }
 
         stage ('Run GRAS')
