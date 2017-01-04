@@ -16,7 +16,12 @@ pipeline {
         stage ('Kill Old GRAS')
         {
 	steps{
-            bat 'taskkill /f /im GRAS.exe'
+            bat '''
+		tasklist /FI "IMAGENAME eq GRAS.exe" 2>NUL | find /I /N "GRAS.exe">NUL
+		if "%ERRORLEVEL%"=="0" echo Programm is running	 | taskkill /f /im GRAS.exe	
+
+
+		'''
 	    }
         }
 
