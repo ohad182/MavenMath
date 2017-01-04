@@ -28,10 +28,11 @@ pipeline {
         stage ('Run GRAS')
         {
 		 steps {
-            bat 'cd "c:/Program Files (x86)/Marvell/GRAS"'
-
-            bat 'GRAS.exe "C:/work/TestCI.xml" -s -jo "c:/logs/jenkins" -jv cisco_tesla_bx_v2.3 -dp'
-			}
+        	    bat '''
+			cd "c:/Program Files (x86)/Marvell/GRAS"'
+		        bat 'GRAS.exe "C:/work/TestCI.xml" -s -jo "c:/logs/jenkins" -jv cisco_tesla_bx_v2.3 -dp
+			'''
+		}
         }
     }
 }
